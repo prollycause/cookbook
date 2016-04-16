@@ -1,0 +1,16 @@
+{
+  "name"         : "CookBook",
+  "version"      : "0.0.0",
+  "description"  : "Cookbook CMS",
+  "main"         : "server.js",
+  "author"       : "James Paradise",
+  "repository"   : "https://githubt.com/prollycause/cookbook.git",
+  "license"      : "MIT",
+  "dependencies" : {
+    "express"    : "~4.13.4",
+    "mongoose"   : "~4.4.12",
+    "morgan"     : "~1.7.0",
+    "body-parser": "~1.15.0",
+    "method-override": "~2.3.5"
+    }
+}
