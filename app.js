@@ -4,7 +4,7 @@ bodyParser = require('body-parser'), methodOverride = require('method-override')
 router = express.Router(), parseUrlEncoded = bodyParser.urlencoded({'extended':'true'});
 
 var recipe = require('./routes/recipe.js');
-var port = process.env.PORT || 9003;
+var port = process.env.PORT || 9001;
 
 
 	app.use(express.static(__dirname + '/public'));
@@ -17,7 +17,7 @@ var port = process.env.PORT || 9003;
 
 app.get('*', function(req, res) {
     res.sendFile('./public/index.html'); 
-});
+});	
 
 app.listen(port);
 console.log('Listening on: ' + port);
