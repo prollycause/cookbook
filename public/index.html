@@ -1,71 +1,59 @@
 <!DOCTYPE html>
-<html ng-app="jamesCookBook">
+<html ng-app='jamesCookBook'>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Node/Angular Recipe App</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>MEAN Recipe App</title>
+    <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css'>
     <link rel='stylesheet' href='stylesheet.css'>
 </head>
-<body ng-controller="mainController">
-
-
-
-<div class="container">
-
- <h2 align="center">Recipe Creator</h2><hr>
-  <form id="nameAuthor" role="form">
-    <div class="form-group">
-      <label for="name">Recipe Name</label>
-      <input ng-model="formData.name" class="form-control" id="name" placeholder="Recipe Name" requried>
-    </div>
-    <div class="form-group">
-      <label for="author">Author:</label>
-      <input class="form-control" id="author" placeholder="Your Name" ng-model="formData.author" requried>
-    </div>
-    <div class="form-group">
-        <label for="ingredient">Ingredients:</label>
-        <textarea rows="6" cols="30" class="form-control" id="ingredient" placeholder="Add Ingredients" ng-model="formData.ingredients" requried></textarea>
-    </div>
-    <div class="form-group">
-        <label for="instructions">Instructions:</label>
-        <textarea rows='6' cols='30' class="form-control" id="instructions" placeholder="Add Instructions" ng-model="formData.instructions" requried></textarea>
-    </div>
+<body ng-controller='mainController'>
+<div class='container'>
+    <h2 align='center'>Recipe Creator</h2>
+    <form id='nameAuthor' role='form'>
+        <div class='form-group'>
+            <label for='name'>Recipe Name</label>
+            <input ng-model='formData.name' class='form-control' id='name' name='name' placeholder='Recipe Name' requried>
+        </div>
+        <div class='form-group'>
+            <label for='author'>Author:</label>
+            <input class='form-control' id='author' placeholder='Your Name' name='author' ng-model='formData.author' requried>
+        </div>
+        <div class='form-group'>
+            <label for='ingredient'>Ingredients:</label>
+            <textarea rows='3' cols='30' class='form-control' id='ingredient' placeholder='Add Ingredients' name='ingredients' ng-model='formData.ingredients' requried></textarea>
+        </div>
+        <div class='form-group'>
+            <label for='instructions'>Instructions:</label>
+            <textarea rows='3' cols='30' class='form-control' id='instructions' placeholder='Add Instructions' name='instructions' ng-model='formData.instructions' requried></textarea>
+        </div>
+        <button type='submit' ng-click='createRecipe()' class='btn btn-default'>Submit</button>
+        <button ng-click='deleteRecipe()' class='btn btn-warning' id = 'delete'>Delete</button>
+        <div id='check'>
+            <input type="checkbox" ng-model='shown' ng-init="shown = false">
+            <span>Check to Show Data</span>
+        </div>
+    </form>
     
-    
-    
-    <button type="submit" ng-click="createRecipe()" class="btn btn-default">Submit</button>
-    <button ng-click="deleteRecipe()" class="btn btn-warning" id = 'delete'>Delete Entire Recipe</button>
-  </form>
-
-<hr>
-
-
-
-
-<div></div>
-
-<div id="output">
-
-    <ul ng-repeat='recipe in recipes'>
-        <li><span>Name :  {{ recipe.name  }} </span></li>
-        <li><span>Author: {{recipe.author}}</span></li>
-        <li><span>Ingredients: {{recipe.ingredients}}</span></li>
-        <li><span>Instructions: {{recipe.instructions}}</span></li>
-    </ul>
+    <div ng-if='shown' id='output'>
+        <ul ng-repeat='recipe in recipes'>
+            <li>
+                <span>Name :  {{ recipe.name  }} </span>
+            </li>
+            <li>
+                <span>Author: {{ recipe.author }}</span>
+            </li>
+            <li>
+                <span>Ingredients: {{ recipe.ingredients }}</span>
+            </li>
+            <li>
+                <span>Instructions: {{ recipe.instructions }}</span>
+            </li>
+        </ul>
+    </div>
 </div>
-
-</div>
-
-        
-
-
-
-
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
-<script src="cookBook.js"></script>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src='cookBook.js'></script>
 </body>
 </html>

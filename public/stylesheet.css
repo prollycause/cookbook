@@ -1,19 +1,21 @@
 html { 
 	overflow-y: scroll; 
 }
-body {
-	padding-top: 50px;
-}
+
 #output {
 	background-color: black;
 	color: gold;
-	margin: 30px;
-	height: 300px;
-	width: 250px;
+	margin: 5px;
 	display: inline-table;
-	padding: 20px;
-	
+	padding: 5px;
+	word-wrap: normal;
+	border-radius: 10px;
 }
-
+li {
+	list-style-type: none;
+}
+#check {
+	float:right;
+}
 
 
