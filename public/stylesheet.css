@@ -1,0 +1,19 @@
+html { 
+	overflow-y: scroll; 
+}
+body {
+	padding-top: 50px;
+}
+#output {
+	background-color: black;
+	color: gold;
+	margin: 30px;
+	height: 300px;
+	width: 250px;
+	display: inline-table;
+	padding: 20px;
+	
+}
+
+
+
